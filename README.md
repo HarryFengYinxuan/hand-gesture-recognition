@@ -1,16 +1,14 @@
 # Report
 
 Group:
-Yinxuan Feng 
-Shuohe Ren 
-HaeJong Yoo
+Yinxuan Feng, Shuohe Ren, and HaeJong Yoo
 
 ## Description
 <p>
     1.1 Our program recognizes 5 gestures: open hand, index finger, fist, scrolling up, and scrolling down.
 </p>
 <p>
-    1.2 We preprocess the templates by first converting them to black and white images. We scale the image by 0.2, and then use dynamic background substraction to make static objects black and dynamic objects white. For gesture static recognization, we use template matching for each one, and set a threshold for every template. We find the one with the most probability and draw that one on the canvas. For scrolling motions, we compare 15 consecutive frames, and check if the recognized gesture is moving up or down. For those frames, as there might be 1 or 2 frames inside it was missed, we preprocess that so the minor misses will be ignored. After recognition, we draw boxes of the objects, and label the coordinates. If there are motions, we label the detected motions.
+    1.2 We preprocess the templates by first converting them to black and white images. We scale the images by 0.2, and then use dynamic background substraction to make static objects black and moving objects white. For gesture static recognization, we use template matching for each one, and set a threshold for every template. We find the one with the most probability and draw that one on the canvas. For scrolling motions, we compare 15 consecutive frames, and check if the recognized gesture is moving up or down. For those frames, as there might be 1 or 2 frames inside it was missed, we preprocess that so the minor misses will be ignored. After recognition, we draw boxes of the objects, and label the coordinates. If there are motions, we label the detected motions.
 </p>
 
 ## Confusion Matrix
@@ -41,22 +39,22 @@ fist: precision = 0.8333, recall = 1, F1 = 0.9091
 
 ## Success and failure cases
 <br/>
-<p>Left: good open hand. Right: hand too big</p>
+<p>Up: good open hand. Down: hand too big</p>
 <img src="hand.png"><img src="hand too big.png"><br/>
 
 <br/>
-<p>Left: good index finger. Right: wrong orientation</p>
+<p>Up: good index finger. Down: wrong orientation</p>
 <img src="index.png"><img src="wrong orientation.png"><br/>
 
 <br/>
-<p>Left: good fist. Right: fist blocked by phone</p>
+<p>Up: good fist. Down: fist blocked by phone</p>
 <img src="fist good.png"><img src="fist block.png"><br/>
 
 <br/>
-<p>Left: good scrolling up. Right: moving too slow</p>
+<p>Up: good scrolling up. Down: moving too slow</p>
 <img src="up.png"><img src="too still.png"><br/>
 
 <br/>
-<p>Left: good scrolling down. Right: waving too hard that it is not considering scrolling down</p>
+<p>Up: good scrolling down. Down: waving too hard that it is not considering scrolling down</p>
 <img src="down.png"><img src="waving too hard.png"><br/>
 
