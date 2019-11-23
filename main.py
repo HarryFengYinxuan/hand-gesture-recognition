@@ -100,10 +100,10 @@ def getShape(cap):
 # initialize
 cap = cv2.VideoCapture(0)
 h, w = getShape(cap)
-out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 20.0,(int(cap.get(3)),int(cap.get(4))))
+out = cv2.VideoWriter('output.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 20.0,(int(cap.get(3)),int(cap.get(4))))
 # get templates
 openhand = cv2.imread("openhand.png")
-openhand = cv2.cvtColor(openhand, cv2.COLOR_BGR2GRAY)
+cdopenhand = cv2.cvtColor(openhand, cv2.COLOR_BGR2GRAY)
 fist = cv2.imread("fist.png")
 fist = cv2.cvtColor(fist, cv2.COLOR_BGR2GRAY)
 indexfinger = cv2.imread("indexfinger.png")
@@ -149,7 +149,8 @@ while(True):
         break
     elif k & 0xFF == ord('s'):
         # press s to screenshot, but only one image comes out
-        cv2.imwrite('out.png', fgMask)
+        cv2.imwrite('mask.png', fgMask)
+        cv2.imwrite('output.png', output)
 
 # When everything done, release the video capture and video write objects
 cap.release()
