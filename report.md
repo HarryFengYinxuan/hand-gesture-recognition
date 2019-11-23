@@ -15,13 +15,19 @@ HaeJong Yoo
 
 ## Confusion Matrix
 2.1
-|                 |                | Actual class |                |            |
-|-----------------|----------------|--------------|----------------|------------|
-|                 |                | Scrolling up | Scrolling down | No gesture |
-| Predicted class | Scrolling up   | 5            | 0              | 0          |
-|                 | Scrolling down | 0            | 4              | 0          |
-|                 | No gesture     | 0            | 1              | 5          |
-2.2
+
+<br/>
+
+|                 |             |Actual class|                	|           |				|
+|-----------------|-------------|------------|------------------|-----------|---------------|
+|                 |             | Open Hand	 | Index Finger 	|  Fist 	| No gesture 	|
+| Predicted class | Open Hand   | 5          | 0           		| 0         | 0 			|
+|                 | Index Finger| 0          | 4              	| 0         | 0 			|
+|                 | Fist 		| 0          | 1              	| 5         | 0 			|
+|                 | No gesture 	| 0          | 0              	| 0         | 5 			|
+
+2.2<br/>
+
 |                 |                | Actual class |                |            |
 |-----------------|----------------|--------------|----------------|------------|
 |                 |                | Scrolling up | Scrolling down | No gesture |
